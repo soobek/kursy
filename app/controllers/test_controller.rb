@@ -4,6 +4,8 @@ class TestController < ApplicationController
   def index
     #to jest odwołanie do pliku index.html.erb
     @testowa = "witaj w kursie RoR"
+    @imiona = ["ala", "ela", "ola"]
+    @id = params[:id].to_i
   end
   
   def test
