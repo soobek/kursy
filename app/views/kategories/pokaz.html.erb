@@ -1,0 +1,28 @@
+<h1>Pokaż Kategorię</h1>
+
+<%= link_to("Powrót", {:action => 'index'})%>
+
+
+
+<table>
+    <tr>
+        <th>Nazwa </th>
+        <td><%= @kategoria.nazwa %></td>
+    </tr>
+    <tr>
+        <th>Pozycja </th>
+        <td><%= @kategoria.pozycja %></td>
+    </tr>
+    <tr>
+        <th>Czy jest widoczna? </th>
+        <td><%= @kategoria.widoczna ? 'Tak' : 'Nie' %></td>
+    </tr>
+    <tr>
+        <th>Utworzona </th>
+        <td><%= @kategoria.created_at %></td>
+    </tr>
+    <tr>
+        <th>Zmodyfikowana </th>
+        <td><%= @kategoria.updated_at %></td>
+    </tr>
+</table>
