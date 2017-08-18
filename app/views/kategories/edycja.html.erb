@@ -1,2 +1,12 @@
-<h1>Kategories#edycja</h1>
-<p>Find me in app/views/kategories/edycja.html.erb</p>
+<h1>Edycja Kategorii</h1>
+
+<%= link_to("Powrót", {:action => 'index'})%>
+
+<%= form_for(:kategoria, :url => {:action => 'aktualizuj', :id => @kategoria.id}) do |pole| %>
+
+<%= render(:partial => "form", :locals => {:pole => pole})%>
+
+<div>
+<%= submit_tag("Aktualizuj") %>
+</div>
+<% end %>
