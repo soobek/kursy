@@ -1,6 +1,6 @@
 class KategoriesController < ApplicationController
  
- layout false
+ layout 'admin'
  
   def index
     
@@ -19,6 +19,7 @@ class KategoriesController < ApplicationController
   def utworz
     @kategorie = Kategorie.new(kategorie_parametry)
     if @kategorie.save
+      flash[:notice] = "Kategoria została pomyślnie utworzona."
       redirect_to(:action => 'index')
     else
       @licznik = Kategorie.count + 1
@@ -33,6 +34,7 @@ class KategoriesController < ApplicationController
   def aktualizuj
     @kategoria = Kategorie.find(params[:id])
       if @kategoria.update_attributes(kategorie_parametry)
+      flash[:notice] = "Kategoria została pomyślnie zmodyfikowana."
       redirect_to(:action => 'pokaz', :id => @kategoria.id)
       else
       @licznik = Kategorie.count
@@ -43,8 +45,9 @@ class KategoriesController < ApplicationController
     @kategoria = Kategorie.find(params[:id])
   end
   def kasuj
-    kategoria = Kategorie.find(params[:id]).destroy
-    redirect_to(:action => 'index')
+      kategoria = Kategorie.find(params[:id]).destroy
+      flash[:notice] = "Kategoria została pomyślnie usunięta."
+      redirect_to(:action => 'index')
   end
   def kategorie_parametry
     params.require(:kategoria).permit(:nazwa, :pozycja, :widoczna, :created_at)
