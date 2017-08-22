@@ -18,7 +18,7 @@
 
 <% @stronas.each do |strona| %>	
 	<tr>
-		<td><%= strona.kategorie_id %></td>
+		<td><%= strona.kategorie.nazwa %></td>
 		<td><%= strona.pozycja %></td>
 		<td><%= strona.nazwa %></td>
 		<td class="center"><%= status_widoku(strona.widoczna) %></td>

@@ -1,5 +1,5 @@
 <div class="hero-unit">
-<h1>Edycja Kategorii</h1>
+<h1>Edycja Kategorii:</h1><h2 style="text-align:center;"><%= @kategoria.nazwa %></h2>
 
 <%= form_for(:kategoria, :url => {:action => 'aktualizuj', :id => @kategoria.id}) do |pole| %>
 

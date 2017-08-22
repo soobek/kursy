@@ -4,7 +4,7 @@ class CreateGaleries < ActiveRecord::Migration
       t.string "nazwa"
       t.integer "pozycja"
       t.text "opis"
-      t.boolean "widoczna", :default=>false
+      t.boolean "widoczna", :default => false
       t.attachment :zdjecie
       t.timestamps null: false
     end

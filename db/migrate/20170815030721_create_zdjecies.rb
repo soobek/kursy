@@ -4,7 +4,7 @@ class CreateZdjecies < ActiveRecord::Migration
       t.integer "galerie_id"
       t.string "nazwa"
       t.integer "pozycja"
-      t.boolean "widoczne", :default=>true
+      t.boolean "widoczne", :default => true
       t.string "opis"
       t.attachment :zdjecie
       t.timestamps null: false

@@ -7,5 +7,4 @@ class Strona < ActiveRecord::Base
     scope :sortuj, lambda {order("stronas.pozycja ASC")}
     scope :najnowsza, lambda {order("stronas.created_at DESC")}
     
-
 end

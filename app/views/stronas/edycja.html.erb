@@ -1,2 +1,14 @@
-<h1>Stronas#edycja</h1>
-<p>Find me in app/views/stronas/edycja.html.erb</p>
+<div class="hero-unit">
+<h1>Edycja Strony:</h1><h2 style="text-align:center;"><%= @strona.nazwa %></h2>
+
+<%= form_for(:strona, :url => {:action => 'aktualizuj', :id => @strona.id}) do |pole| %>
+
+<%= render(:partial => "form", :locals => {:pole => pole}) %>
+
+<div style="text-align: center;">
+	<%= link_to("anuluj", {:action => 'index'}, :class => 'btn btn-warning')%>
+	<%= submit_tag("aktualizuj", :class => 'btn  btn-primary') %>
+</div>
+
+<% end %>
+</div>
