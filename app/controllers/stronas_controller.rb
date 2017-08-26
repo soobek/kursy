@@ -53,6 +53,6 @@ class StronasController < ApplicationController
   end
   
   def strona_parametry
-    params.require(:strona).permit(:kategorie_id, :nazwa, :pozycja, :widoczna, :created_at)
+    params.require(:strona).permit(:kategorie_id, :nazwa, :pozycja, :widoczna, :created_at, :zdjecie)
   end
 end

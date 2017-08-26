@@ -1,0 +1,18 @@
+<div class="hero-unit">
+<h1>Usunięcie Zdjęcia</h1>
+
+<%= form_for(:zdjecia, :url => {:action => 'kasuj', :id => @zdjecia.id}) do |pole| %>
+
+<p>Czy na pewno mam usunąć zdjęcie?</p>
+
+<p class="text-warning"><%= @zdjecia.nazwa %></p>
+<p class="text-warning"><%= image_tag @zdjecia.zdjecie.url(:thumb) %></p>
+
+
+<div style="text-align: center;">
+	<%= link_to("Powrót", {:action => 'index'}, :class => 'btn btn-primary')%>
+	<%= submit_tag("Usuń", :class =>  'btn  btn-danger') %>
+</div>
+
+<% end %>
+</div>

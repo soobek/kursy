@@ -1,0 +1,41 @@
+<div class="hero-unit">
+<h1>Pokaż Zdjęcie</h1>
+ <table class="table table-striped">
+	<tr>
+		<th>Nazwa</th>
+		<td><%= @zdjecia.nazwa %></td>
+	</tr>
+	<tr>
+		<th>Pozycja</th>
+		<td><%= @zdjecia.pozycja %></td>
+	</tr>
+	<tr>
+		<th>Czy widoczne?</th>
+		<td><%= @zdjecia.widoczne ? 'Tak' : 'Nie' %></td>
+	</tr>
+	<tr>
+		<th>Zdjęcie</th>
+		<td><%= image_tag(@zdjecia.zdjecie) %></td>
+	</tr>
+	<tr>
+		<th>Opis</th>
+		<td><%= @zdjecia.opis %></td>
+	</tr>
+	<tr>
+		<th>Utworzone:</th>
+		<td><%= @zdjecia.created_at %></td>
+	</tr>
+	<tr>
+		<th>Aktualizacja:</th>
+		<td><%= @zdjecia.updated_at %></td>
+	</tr>
+
+</table>
+<div style="text-align: center;">
+	<%= link_to("Powrót", {:action => 'index'}, :class => 'btn btn-primary')%>
+</div>
+</div>
+
+
+
+
