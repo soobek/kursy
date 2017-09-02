@@ -1,0 +1,30 @@
+<div class="hero-unit">
+
+<h1>Użytkownicy</h1>
+
+<%= link_to("Dodaj nowego użytkownika", {:action => 'nowy'}, :class => 'btn btn-mini btn-primary')%>
+<p style="text-align: right;">Ilość użytkowników: <%= @uzytkownik.size %></p>
+
+
+  <table class="table table-striped">
+	<tr class="info">
+		<th>użytkownik</th>
+        <th>imie i nazwisko</th>
+        <th>email</th>
+        <th>akcja</th>
+    </tr>
+
+<% @uzytkownik.each do |uzytkownik| %>	
+	<tr>
+		<td><%= uzytkownik.uzytkownik %></td>
+		<td><%= uzytkownik.imie + " " + uzytkownik.nazwisko %></td>
+		<td><%= mail_to(uzytkownik.email) %></td>
+		<td  class="actions">
+			<%= link_to("Edycja", {:action => 'edycja', :id => uzytkownik.id}, :class => 'btn btn-xs btn-primary') %>			
+			<%= link_to("Usuń",  {:action => 'usun', :id => uzytkownik.id}, :class => 'btn btn-xs btn-danger') %>			
+		</td>
+	</tr>
+<% end %>
+    
+</table>
+</div>

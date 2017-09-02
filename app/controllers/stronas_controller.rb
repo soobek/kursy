@@ -1,5 +1,7 @@
 class StronasController < ApplicationController
  layout 'admin'
+
+  before_action :sprawdz_logowanie
  
   def index
     @stronas = Strona.sortuj

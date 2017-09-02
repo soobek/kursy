@@ -1,0 +1,10 @@
+<div class="hero-unit">
+  <h3>Admin Menu</h3>
+    <%= link_to("Kategorie", {:controller => 'kategories'},  :class => 'btn btn-default') %>
+    <%= link_to("Strony", {:controller => 'stronas'},  :class => 'btn btn-default') %>
+    <%= link_to("Artykuły", {:controller => 'artykuls'},  :class => 'btn btn-default') %>
+    <%= link_to("Galerie", {:controller => 'galeries'},  :class => 'btn btn-default') %>
+    <%= link_to("Zdjęcia", {:controller => 'zdjecies'},  :class => 'btn btn-default') %>        
+    <%= link_to("Użytkownicy", {:controller => 'uzytkowniks'},  :class => 'btn btn-default') %>
+    <%= link_to("Wyloguj", {:action => 'logout'}, :class => 'btn btn-default') %>
+</div>
