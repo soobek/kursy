@@ -1,17 +1,17 @@
-<div class="login">
+<div class="form-group">
   <%= form_tag(:action => 'logowanie') do %>
-  <table>
+  <table class="table table-striped">
     <tr>
-      <td><%= label_tag(:uzytkownik, "Użytkownik: ") %></td>
+      <th><%= label_tag(:uzytkownik, "Użytkownik: ") %></th>
       <td><%= text_field_tag(:uzytkownik) %></td>
     </tr>
     <tr>
-      <td><%= label_tag(:haslo, "Hasło: ") %></td>
+      <th><%= label_tag(:haslo, "Hasło: ") %></th>
       <td><%= password_field_tag(:haslo) %></td>
     </tr>
     <tr>
-      <td>&nbsp;</td>
-      <td><%= submit_tag("Zaloguj") %></td>
+      <th>&nbsp;</th>
+      <td><%= submit_tag("Zaloguj", :class => 'btn  btn-primary') %></td>
     </tr>
   </table>
   <% end %>

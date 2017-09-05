@@ -1,16 +1,9 @@
 Rails.application.routes.draw do
-  get 'uzytkowniks/index'
 
-  get 'uzytkowniks/nowy'
-
-  get 'uzytkowniks/edycja'
-
-  get 'uzytkowniks/usun'
-
-  root "test#index"
+  root "public#index"
   get 'admin', :to => "dostep#index"
   match ':controller(/:action(/:id))', :via => [:get, :post]
-  #get 'test/index'
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

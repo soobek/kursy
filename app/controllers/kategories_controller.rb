@@ -51,6 +51,8 @@ class KategoriesController < ApplicationController
       flash[:notice] = "Kategoria została pomyślnie usunięta."
       redirect_to(:action => 'index')
   end
+
+private
   def kategorie_parametry
     params.require(:kategoria).permit(:nazwa, :pozycja, :widoczna, :created_at)
   end

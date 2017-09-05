@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Szkolenie <%= " | #{@tytul_strony}" if @tytul_strony %></title>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application'  %>
+    
+</head>
+<body>
+
+<!-- menu -->
+    <%= render(:partial => 'menu') %>
+<!-- główna -->
+<div id="content">
+    <%= yield %>
+</div>
+
+<!-- stopka -->
+    <div id="footer">
+      <br>Kurs RoR &copy; <a href="http://www.apohllo.pl/guides/getting_started.html" target="_blank">http://www.apohllo.pl/guides/getting_started.html</a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<% @tytul_strony = @galeria.nazwa %>
+<div class="container">
+  <h2><%= @galeria.nazwa %></h2>
+  <div class="row">
+    <div class="col-md-8">
+      <%= @galeria.opis %>
+      <hr>
+      <p><%= link_to("<< wstecz", {:controller => 'public', :action => 'index'}, :class => 'btn btn-default')%></p>
+	</div>
+	<div class="col-md-4">
+		<%= image_tag(@galeria.zdjecie.url, :class => "featurette-image img-responsive")%>
+	</div>
+  </div>
+  <hr>
+</div>
+
+<div class="container">
+  <% @galeria.zdjecies.widoczne.each_slice(3) do |zdjecie| %>
+    <div class="row">
+      <% zdjecie.each do |zdj| %>
+        <div class="col-md-4">
+          <a class="example-image-link" href="<%= zdj.zdjecie.url %>" data-lightbox="example-set" title="<%= zdj.opis %>"> 
+    	    <%= image_tag(zdj.zdjecie.url(:thumb)) %>
+    	   </a>
+    	  <br>
+    	  <%= zdj.nazwa %>
+	    </div>
+	   <% end %>
+    </div>
+  <% end %>
+</div>

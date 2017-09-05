@@ -1,0 +1,15 @@
+<% @tytul_strony = @artykul.nazwa %>
+
+<div class="container">
+  <h2><%= @artykul.nazwa %></h2>
+  <div id="row"> 
+  	<div class="col-md-8">
+  	  <p> <%= @artykul.zawartosc %> </p>
+  	  <hr>
+  	  <p><%= link_to("<< wstecz", {:controller => 'public', :action => 'index'}, :class => 'btn btn-default') %></p>
+  	</div>
+  	<div class="col-md-4">
+  		<%= image_tag(@artykul.zdjecie.url, :class => "featurette-image img-responsive") %>
+  	</div>
+  </div>
+</div>

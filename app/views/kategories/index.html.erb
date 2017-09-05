@@ -22,9 +22,10 @@
 		<td class="center"><%= status_widoku(kategoria.widoczna) %></td>
 		<td class="center"><%= kategoria.stronas.size %></td>
 		<td  class="actions">
-			<%= link_to("Pokaż", {:action => 'pokaz', :id => kategoria.id}, :class => 'btn btn-xs btn-default') %>
-			<%= link_to("Edycja", {:action => 'edycja', :id => kategoria.id}, :class => 'btn btn-xs btn-primary') %>			
-			<%= link_to("Usuń",  {:action => 'usun', :id => kategoria.id}, :class => 'btn btn-xs btn-danger') %>			
+					<%= link_to("Pokaż", {:action => 'pokaz', :id => kategoria.id}, :class => 'btn btn-xs btn-default') %>
+					<%= link_to("Edycja", {:action => 'edycja', :id => kategoria.id}, :class => 'btn btn-xs btn-primary') %>			
+					<%= link_to("Usuń",  {:action => 'usun', :id => kategoria.id}, :class => 'btn btn-xs btn-danger') %>	
+					<%= link_to("Strony", {:controller => 'stronas', :kategoria_id => kategoria.id}, :class => 'btn btn-xs btn-success') %>
 		</td>
 	</tr>
 <% end %>

@@ -1,0 +1,31 @@
+<% @tytul_strony = @strona.nazwa %>
+
+<% lp = 0 %>
+
+<div class="container">
+  <div id="row">
+  	<h2><%= @strona.nazwa %></h2>
+  	<% @strona.artykuls.widoczny.sortuj.each do |artykul| %>
+  	  <% if lp % 2 == 0 %>
+  	    <div class="col-md-8">
+  	  	  <p><%= artykul.zawartosc %></p>
+  	    </div>
+  	    <div class="col-md-4">
+  	  	  <%= image_tag(artykul.zdjecie.url, :class => "featurette-image img-responsive")%>
+  	    </div>
+  	  <% else %>
+   	    <div class="col-md-4">
+  	  	  <%= image_tag(artykul.zdjecie.url, :class => "featurette-image img-responsive")%>
+  	    </div>
+  	    <div class="col-md-8">
+  	  	  <p><%= artykul.zawartosc %></p>
+  	    </div> 	  
+  	  <% end %>
+  	    <div class="col-md-12"><hr></div> 	
+  	  <% lp += 1 %>  	  
+  	<% end %>
+    <div class="col-md-12">
+    	<%= link_to("<< wstecz", {:controller => 'public', :action => 'kategorie', :kategoria_id => @strona.kategorie.id}, :class => 'btn btn-default') %>
+    </div> 	  	
+  </div>
+</div>

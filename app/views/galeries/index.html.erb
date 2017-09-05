@@ -11,6 +11,7 @@
 		<th>nazwa</th>
         <th>pozycja</th>
         <th>widoczny</th>
+        <th>ilość zdjęć</th>
         <th>akcja</th>
     </tr>
 
@@ -19,10 +20,12 @@
 		<td><%= galerie.nazwa %></td>
 		<td><%= galerie.pozycja %></td>
 		<td class="center"><%= status_widoku(galerie.widoczna) %></td>
+		<td class="center"><%= galerie.zdjecies.size %></td>
 		<td  class="actions">
 			<%= link_to("Pokaż", {:action => 'pokaz', :id => galerie.id}, :class => 'btn btn-xs btn-default') %>
 			<%= link_to("Edycja", {:action => 'edycja', :id => galerie.id}, :class => 'btn btn-xs btn-primary') %>			
-			<%= link_to("Usuń",  {:action => 'usun', :id => galerie.id}, :class => 'btn btn-xs btn-danger') %>			
+			<%= link_to("Usuń",  {:action => 'usun', :id => galerie.id}, :class => 'btn btn-xs btn-danger') %>		
+			<%= link_to("Zdjęcia", {:controller => 'zdjecies', :galerie_id => galerie.id}, :class => 'btn btn-xs btn-success') %>
 		</td>
 	</tr>
 <% end %>

@@ -1,0 +1,12 @@
+<% @tytul_strony = "Najnowsze 10 stron" %>
+
+<div class="container">
+  <div id="row">
+	<h2>Spis stron (10 najnowszych):</h2>	
+	  <% @strona_menu.each do |strona|%>
+	    <%= link_to(strona.nazwa, {:action => "strona", :strona_id => strona.id}, :class => 'btn btn-default btn-lg btn-block') %>
+	  <% end %>
+  </div>
+</div>
+
+

@@ -13,7 +13,7 @@ class Artykul < ActiveRecord::Base
                 :presence => {:message => "---Wprowadź tytuł artykułu.---"},
                 :length => {:maximum => 120, :message => "---Za długi tytuł artykułu.---"}
 
-    scope :widoczny, lambda {where(:widoczny => true)}
+    scope :widoczny, lambda {where(:widoczna => true)}
     scope :niewidoczny, lambda {where(:widoczny => false)}
     scope :sortuj, lambda {order("artykuls.pozycja ASC")}
     scope :najnowszy, lambda {order("artykuls.created_at DESC")}

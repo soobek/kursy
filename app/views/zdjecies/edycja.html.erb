@@ -1,12 +1,12 @@
 <div class="hero-unit">
 <h1>Edycja Zdjęcia:</h1><h2 style="text-align:center;"><%= @zdjecia.nazwa %></h2>
 
-<%= form_for(:zdjecia, :url => {:action => 'aktualizuj', :id => @zdjecia.id}) do |pole| %>
+<%= form_for(:zdjecia, :url => {:action => 'aktualizuj', :id => @zdjecia.id, :galerie_id => @galerie.id}) do |pole| %>
 
 <%= render(:partial => "form", :locals => {:pole => pole}) %>
 
 <div style="text-align: center;">
-	<%= link_to("anuluj", {:action => 'index'}, :class => 'btn btn-warning')%>
+	<%= link_to("anuluj", {:action => 'index', :galerie_id => @galerie.id}, :class => 'btn btn-warning')%>
 	<%= submit_tag("aktualizuj", :class => 'btn  btn-primary') %>
 </div>
 

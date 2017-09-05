@@ -1,0 +1,10 @@
+<% @tytul_strony = "Kategorie" %>
+
+<div class="container">
+  <div id="row">
+  	<h2>Lista strona w kategorii: <%= @kategoria.nazwa %> </h2>
+      <% @kategoria.stronas.widoczna.sortuj.each do |strona| %>
+  	    <%= link_to(strona.nazwa, {:action => 'strona', :strona_id => strona.id}, :class => 'btn btn-default btn-lg btn-block') %>
+  	  <% end %>
+  </div>
+</div>

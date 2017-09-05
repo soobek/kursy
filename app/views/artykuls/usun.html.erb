@@ -1,7 +1,7 @@
 <div class="hero-unit">
 <h1>Usunięcie Artykułu</h1>
 
-<%= form_for(:artykuly, :url => {:action => 'kasuj', :id => @artykuly.id}) do |pole| %>
+<%= form_for(:artykuly, :url => {:action => 'kasuj', :id => @artykuly.id, :strona_id => @strony.id}) do |pole| %>
 
 <p>Czy na pewno mam usunąć artykuł?</p>
 
@@ -9,7 +9,7 @@
 
 
 <div style="text-align: center;">
-	<%= link_to("Powrót", {:action => 'index'}, :class => 'btn btn-primary')%>
+	<%= link_to("Powrót", {:action => 'index', :strona_id => @strony.id}, :class => 'btn btn-primary')%>
 	<%= submit_tag("Usuń", :class =>  'btn  btn-danger') %>
 </div>
 
